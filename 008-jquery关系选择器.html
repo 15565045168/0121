@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>jquery</title>
+
+      <style>
+            div{
+                  padding: 20px;
+                  border: 10px solid #ddd;
+            }
+            .start{
+                  border-color:  red;
+            }
+      </style>
+</head>
+<body>
+
+
+      <div class="end">
+            <div id="box">
+                  <!-- <div class="start"> -->
+                  <div>
+                        <div class="item" ></div>
+                        <div class="item" ></div>
+                        <div class="item"  class="start"></div>
+                        <div class="item" ></div>
+                        <div class="item" ></div>
+                        <div class="item"  class="end"></div>
+                  </div>
+            </div>
+      </div>
+
+      <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+
+      <script>
+
+            // 家族关系
+               $(".start").parent().css("borderColor","yellowgreen");
+               $(".start").parents("div").css("borderColor","yellowgreen");
+               $(".start").parentsUntil(".end").css("borderColor","yellowgreen");
+
+
+            // $(".start").next().css("borderColor","yellowgreen");
+            // $(".start").nextAll().css("borderColor","yellowgreen");
+            // $(".start").nextUntil(".end").css("borderColor","yellowgreen");
+            
+
+            // $(".start").prev().css("borderColor","yellowgreen");
+            // $(".start").siblings().css("borderColor","yellowgreen");
+
+
+            // 位置关系;
+            // $(".item").eq(0).css("borderColor","yellowgreen");
+            // $(".item").eq(2).css("borderColor","yellowgreen");
+            // $(".item").eq(4).css("borderColor","yellowgreen");
+
+            // $(".item").first().css("borderColor","yellowgreen");
+            // $(".item").last().css("borderColor","yellowgreen");
+
+            
+            // tip : eq() 选中的是对应下标的jquery DOM , 如果我想要获取原生dom如何实现那?
+
+//          console.log($(".item").get(0));
+//          console.log($(".item")[0]);
+
+            // eq 获取的jquery DOM  get 获取的是原生dom对象;
+
+            // 原生DOM有木有办法可以转换成jquery DOM ?
+//
+//          var box = document.getElementById("box");
+//          console.log(box,$(box));
+
+            // 转换之后API通用。 否则是不可以互相使用的;
+
+            
+      
+      </script>
+</body>
+</html>

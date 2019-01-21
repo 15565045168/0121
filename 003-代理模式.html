@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>代理模式</title>
+</head>
+<body>
+      <script>
+           // 代理模式;
+           // 拿过别人的功能进行预处理;
+
+
+            function randomInt(min,max){
+                  return min + Math.round((max - min) * Math.random()); 
+            }
+
+            function proxy(type){
+
+                  // type => light darken normal;
+
+                  var randomList = {
+                        "light":{
+                              min : [100,100,100],
+                              max : [255,255,255]
+                        },
+                        "darken" : {
+                              min : [0,0,0],
+                              max : [100,100,100]
+                        },
+                        "normal" : {
+                              min : [75,75,75],
+                              max : [175,175,175]
+                        }
+                  }     
+
+                  var minlist = randomList[type].min;
+                  var maxlist = randomList[type].max;
+
+                  var r = randomInt(minlist[0],maxlist[0]);
+                  var g = randomInt(minlist[1],maxlist[1]);
+                  var b = randomInt(minlist[2],maxlist[2]);
+
+
+                  return `rgb(${r},${g},${b})`;
+            }
+
+            document.body.style.background = proxy("normal");
+
+            // 1. 当现有功能无法满足需求，但这个功能不可或缺,我们对功能进行部分预处理, 或者进行一些提前封装让得到的结果使我们想要的结果,这种二次封装我们称之为代理模式;
+
+
+
+      </script>
+</body>
+</html>

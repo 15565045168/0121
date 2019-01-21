@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>jquery-选择器</title>
+</head>
+<body>
+      <div class="box" id="box">i'm box</div>
+      <div class="box" id="box">i'm box</div>
+      <div class="box" id="box">i'm box</div>
+      <div class="box" id="box">i'm box</div>
+      <div class="box" id="box">i'm box</div>
+
+
+      <div class="father">
+            <div class="children">i'm children</div>
+            <div class="children">i'm children</div>
+            <div class="children">i'm children</div>
+            <div class="children">i'm children</div>
+            <div class="children">i'm children</div>
+
+            <span>
+                <div class="grandSon">i'm grandSon </div>
+                <div class="grandSon">i'm grandSon </div>
+                <div class="grandSon">i'm grandSon </div>
+                <div class="grandSon">i'm grandSon </div>
+                <div class="grandSon">i'm grandSon </div>
+                <div class="grandSon">i'm grandSon </div>
+            </span>
+
+      </div>
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script>
+    // 1. 选择器; 
+    // 2. 动画;
+    // 3. ajax; $.ajax $.get $.post;
+    // 4. dom对象操作;
+
+    // 工具 ; 
+
+    // jquery选择器分类;
+
+    // 1. id class 标签选择器; 简单选择器;
+
+    console.log($("#box"),document.getElementById("box"));
+
+    // 差距代表着什么那 ? 
+
+    // 1. API 的使用不通用 
+    // document.getElementById("box").style.background = "red";
+    // $("#box").style.background = "red";
+
+    // jquery 给我们提供的所有的API都是方法!;
+    // .css() 改变jquery dom行内样式的;
+    // 参数 => attr , value;
+    // 返回值 => jquery DOM;
+
+    // 一行式连缀;
+    // $("#box")
+    // .css("background","red")
+    // .css("color","green")
+    
+    // jquery 杜绝所有墨迹;
+    // $("#box")
+    // .css({
+    //     background : "red",
+    //     color : "green"
+    // })
+
+    // jquery 独立api功能非常强悍;
+    
+    // console.log($("#box").css("width"));
+    // console.log($("#box").css(["width","height","opacity"]));
+
+
+    // 失明特性;
+    // $("#box").css("background","red");
+
+    // class ;  
+    // 当选择了一组元素, 设置属性的时候不用for循环，自动全部设置;
+    // $(".box").css("background","red");
+
+    
+    // $(".father div").css("color","green");
+    // $(".father>div").css("color","green");
+
+    // 因为jquery 嫌弃选择器写的麻烦，语义化不明确，所以他给我们
+  //  提供了一系列的方法，可以方便的根据关系进行元素选择;
+
+    
+    // children 表示直接子选择器;
+
+    // $(".father").children(".children").css("color","red");
+
+    // console.log($(".father").children(".grandSon"))
+
+
+    // $(".father").find(".children").css("color","red");
+    // $(".father").find(".grandSon").css("color","red");
+
+
+    // 小知识点; find 是一个比较特殊的方法;
+
+    // 如果其他方法在没有传入 任何选择器参数的时候我们默认传入 *;
+    //只有find不允许不传递参数;
+
+    // $(".father").children().css("color","red");
+    // $(".father").find("div").css("color","red");
+
+
+    // DOM 家族关系描述;
+
+    
+
+
+
+   
+
+</script>
+
+</html>

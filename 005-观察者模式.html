@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>观察者模式</title>
+</head>
+<body>
+      
+      <script>
+            // 一对多;
+
+            // 订阅者
+            // var reader = {
+            //       accept : function(msg){
+            //             console.log(msg);
+            //       }
+            // }
+
+
+            function Reader(name){
+                  this.name = name;
+            }
+
+            Reader.prototype.accept = function(msg){
+                  console.log("my name is " + this.name + "i accept msg " + msg);
+            }
+
+            // 发布者;
+            var publish = {
+                  // 订阅者名单;
+                  list : [],
+                  // 订阅功能;
+                  subscribe : function(reader){
+                        this.list.push(reader);
+                  },
+                  // 发布功能;
+                  pub : function(msg){
+                        this.list.forEach((item)=>{
+                              item.accept(msg);
+                        })
+                  },
+                  // 移除订阅功能;
+                  delete : function(reader){
+                        var index = this.list.indexOf(reader)
+                        this.list.splice(index,1);
+                  }
+            }
+
+            publish.subscribe(new Reader("吴彦祖"));
+            publish.subscribe(new Reader("吴奇隆"));
+            publish.subscribe(new Reader("周润发"));
+            publish.subscribe(new Reader("郭富城"));
+            
+            
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>策略模式</title>
+</head>
+<body>
+      <script>
+            function DL(name){
+                  var list = {
+                        "leijun":{
+                              title : "are you ok?"
+                        },
+                        "mahuateng":{
+                              title : "充钱一定快乐",
+                        },
+                        "mayun":{
+                              title : "我不喜欢钱，我对钱没兴趣"
+                        }
+                  }
+
+                  this.title = list[name].title;
+            }
+
+            var mahuateng = new DL("mahuateng");
+            
+            console.log(mahuateng);
+
+            // 路由表 , 配置表, ... 
+
+
+      </script>
+</body>
+</html>

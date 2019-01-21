@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>jquery过滤器</title>
+
+</head>
+<body>
+
+      <!-- <ul>
+            <li>hello world</li>
+            <li>hello world</li>
+            <li>hello world</li>
+            <li>hello world</li>
+            <li>hello world</li>
+            <li>hello world</li>
+            <li>hello world</li>
+            <li>hello world</li>
+            <li>hello world</li>
+            <li>hello world</li>
+      </ul> -->
+
+      <ul>
+            <li>一级菜单</li>
+            <li>一级菜单</li>
+            <li>一级菜单
+                  <ul>
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                  </ul>
+
+            </li>
+            <li>一级菜单
+                  <ul>
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                  </ul>
+
+            </li>
+            <li>一级菜单
+                  <ul>
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                  </ul>
+
+            </li>
+            <li>一级菜单
+                  <ul>
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                  </ul>
+
+            </li>
+            <li>一级菜单</li>
+            <li>一级菜单</li>
+            <li>一级菜单</li>
+            <li>一级菜单</li>
+      </ul>
+
+
+
+
+      <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+      <script>
+            // $("li:odd").css({
+            //       background : "#ddd"
+            // })
+
+            // $("li:even").css({
+            //       background : "#b6b6b6"
+            // })
+
+            // $("li:first").css({
+            //       background : "#f10"
+            // })
+            // $("li:last").css({
+            //       background : "#f10"
+            // })
+
+            // $("li:has(ul)").css({
+            //       color:"#f10"
+            // })
+
+            // $("li").has("ul").children().css({
+            //       display:"none"
+            // })
+
+            // $("li").has("ul").children().hide();
+
+            // 选中所有标签li  条件1 : li之中包含ul 条件2 : 选中所有li之中的直接子集;
+
+            $("li").has("ul").children().hide()
+            // 向上返回一层选择器;
+            .end()
+            // .css("color","red");
+            // . 事件名 ( 事件处理函数 )
+            .click(function(){      
+                  // this => 是原生dom对象，如果想要进行操作要转换成jquerydom;
+                  // console.log(this);
+
+                  // console.log($(this).css("display") );
+                  // if($(this).children().css("display") === "none"){
+                  //       $(this).children().show();
+                  // }else{
+                  //       $(this).children().hide();
+                  // }
+                  
+                  $(this).siblings().children().hide();
+
+                  $(this).children().toggle();
+            })
+
+ 
+
+      </script>
+</body>
+</html>
